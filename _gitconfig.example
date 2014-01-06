@@ -1,0 +1,25 @@
+[user]
+;	name = Taro Git
+;	email = taro.git@example.com
+[github]
+;	user = taro.git
+;	token = youmustreplacetoavalidvalue
+[core]
+	excludesfile = ~/.gitignore
+	pager = less -r
+	attributesfile = ~/.gitattributes
+	editor = vim
+[color]
+	diff = auto
+    ui = auto
+[grep]
+	lineNumber = true
+[color "grep"]
+	filename = green
+	linenumber = yellow
+	separator = white
+	match = yellow reverse
+[help]
+	autocorrect = 1
+[push]
+	default = simple

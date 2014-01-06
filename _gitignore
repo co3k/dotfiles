@@ -1,0 +1,25 @@
+tags
+GPATH
+GRTAGS
+GTAGS
+
+#--------------------------------------------------------------------------------
+# https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+#--------------------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+#--------------------------------------------------------------------------------
+
+.svn/
+.php-version
+
+nohup.out
