@@ -1,0 +1,5 @@
+noremap h <A-Left>
+noremap l <A-Right>
+noremap H gT
+noremap L gt
+noremap <S-Esc> l
