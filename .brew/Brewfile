@@ -3,8 +3,10 @@ upgrade
 
 tap Homebrew/dupes
 tap phinze/homebrew-cask
+tap caskroom/versions
 install brew-cask
 
+# brew
 install ack
 install autoconf
 install autoconf213
@@ -30,3 +32,16 @@ install tree
 install varnish
 install w3m
 install wget
+
+# cask
+cask install firefox-aurora
+cask install firefox
+cask install google-chrome
+cask install google-chrome-canary
+cask install keyremap4macbook
+cask install alfred
+cask install freemind
+cask install skype
+cask install thunderbird
+cask install vagrant
+cask install virtualbox
