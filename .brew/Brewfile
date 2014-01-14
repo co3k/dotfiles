@@ -1,6 +1,32 @@
 update
 upgrade
 
-# ...
+tap Homebrew/dupes
+tap phinze/homebrew-cask
+install brew-cask
 
-clean
+install ack
+install autoconf
+install autoconf213
+install automake
+install bison
+install boost
+install ctags
+install curl
+install erlang
+install flex
+install git
+install highlight
+install libmemcached
+install libxml2
+install memcached
+install mercurial
+install mysql
+install nkf
+install python
+install python3
+install subversion --unicode-path
+install tree
+install varnish
+install w3m
+install wget
