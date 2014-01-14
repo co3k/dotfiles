@@ -5,6 +5,10 @@ if [ ! -e _gitconfig ]; then
     exit 1
 fi
 
+ln -s `pwd`/.brew ~/.brew
+cd ~/.brew
+brew bundle
+
 ln -s `pwd`/.vimrc ~/.vimrc
 ln -s `pwd`/.vimperatorrc ~/.vimperatorrc
 ln -s `pwd`/.zshrc ~/.zshrc
