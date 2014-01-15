@@ -34,6 +34,8 @@ install w3m
 install wget
 
 # cask
+cask install mysql-workbench
+cask install hall
 cask install firefox-aurora
 cask install firefox
 cask install google-chrome
