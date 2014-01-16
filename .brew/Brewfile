@@ -11,6 +11,7 @@ cask install hall
 cask install firefox-aurora
 cask install skype
 cask install thunderbird
+cask install macvim-kaoriya
 cask install mysql-workbench
 cask install firefox
 cask install google-chrome
