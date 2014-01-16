@@ -5,18 +5,20 @@ if [ ! -e _gitconfig ]; then
     exit 1
 fi
 
-ln -s `pwd`/.brew ~/.brew
+export BASE_PATH=`pwd`
+
+ln -s $BASE_PATH/.brew ~/.brew
 cd ~/.brew
 brew bundle
 
-ln -s `pwd`/.vimrc ~/.vimrc
-ln -s `pwd`/.vimperatorrc ~/.vimperatorrc
-ln -s `pwd`/.zshrc ~/.zshrc
-ln -s `pwd`/_gitconfig ~/.gitconfig
-ln -s `pwd`/_gitignore ~/.gitignore
+ln -s $BASE_PATH/.vimrc ~/.vimrc
+ln -s $BASE_PATH/.vimperatorrc ~/.vimperatorrc
+ln -s $BASE_PATH/.zshrc ~/.zshrc
+ln -s $BASE_PATH/_gitconfig ~/.gitconfig
+ln -s $BASE_PATH/_gitignore ~/.gitignore
 
 mkdir -p ~/.vim/after/ftplugin
-ln -s `pwd`/.vim/after/ftplugin ~/.vim/after/ftplugin
+ln -s $BASE_PATH/.vim/after/ftplugin ~/.vim/after/ftplugin
 
 mkdir -p ~/.vim/bundle
 cd ~/.vim/bundle
