@@ -46,3 +46,5 @@ install tree
 install varnish
 install w3m
 install wget
+install zsh
+install httpd
