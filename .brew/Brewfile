@@ -6,6 +6,21 @@ tap phinze/homebrew-cask
 tap caskroom/versions
 install brew-cask
 
+# cask
+cask install hall
+cask install firefox-aurora
+cask install skype
+cask install thunderbird
+cask install mysql-workbench
+cask install firefox
+cask install google-chrome
+cask install google-chrome-canary
+cask install keyremap4macbook
+cask install alfred
+cask install freemind
+cask install vagrant
+cask install virtualbox
+
 # brew
 install ack
 install autoconf
@@ -31,18 +46,3 @@ install tree
 install varnish
 install w3m
 install wget
-
-# cask
-cask install mysql-workbench
-cask install hall
-cask install firefox-aurora
-cask install firefox
-cask install google-chrome
-cask install google-chrome-canary
-cask install keyremap4macbook
-cask install alfred
-cask install freemind
-cask install skype
-cask install thunderbird
-cask install vagrant
-cask install virtualbox
