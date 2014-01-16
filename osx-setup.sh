@@ -55,3 +55,8 @@ $keyremap4macbook set remap.jis_unify_eisuu_to_kana 1
 defaults write com.runningwithcrayons.Alfred-Preferences 'appearance.theme' 'alfred.theme.pistachio'
 defaults write com.runningwithcrayons.Alfred-Preferences 'hotkey.default' -array '{ key = 49; mod = 1048576; string = Space; }'
 defaults write ~/Library/Application\ Support/Alfred\ 2/Alfred.alfredpreferences/preferences/features/defaultresults/prefs showAll 1
+
+# config Terminal
+open ./co3k-Pro.terminal
+defaults write com.apple.Terminal "Default Window Settings" "co3k-Pro"
+defaults write com.apple.Terminal "Startup Window Settings" "co3k-Pro"
