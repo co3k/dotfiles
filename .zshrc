@@ -1,10 +1,11 @@
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 alias ls='ls -G'
 alias ctags='ctags -R --regex-php="/^[ \t]*const[ \t]+([a-z0-9_]+)/\1/d/i" --exclude=cache'
 alias gg="git grep --break --heading"
 export LSCOLORS=gxfxcxdxbxegedabagacgx
 
 zstyle ':completion:*' list-colors di=36 ln=36 fi=0
-fpath=(~/.zsh/function ${fpath})
 zstyle ':completion:*' completer _complete
 zstyle :compinstall filename '/Users/co3k/.zshrc'
 autoload -Uz compinit
@@ -19,7 +20,6 @@ function chpwd() { ls }
 
 autoload bashcompinit
 bashcompinit
-source ~/.git-completion.bash
 
 function tag()
 {

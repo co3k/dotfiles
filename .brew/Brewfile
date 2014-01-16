@@ -49,3 +49,4 @@ install w3m
 install wget
 install zsh
 install httpd
+install zsh-completions
