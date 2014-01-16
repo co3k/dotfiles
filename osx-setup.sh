@@ -35,6 +35,8 @@ defaults write com.apple.dock "orientation" "right"
 
 # Screen Saver config
 defaults write com.apple.screensaver askForPassword 1
+defaults write com.apple.screensaver idleTime 0
+defaults write com.apple.screensaver moduleDict -array '{ moduleName = iLifeSlideshows; path = "/System/Library/Frameworks/ScreenSaver.framework/Resources/iLifeSlideshows.saver"; type=0; }'
 
 # Hot Keys config
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 '{ enabled = 0; value = { parameters = ( 32, 49, 1048576 ); type = standard; }; }'
@@ -58,6 +60,7 @@ defaults write ~/Library/Application\ Support/Alfred\ 2/Alfred.alfredpreferences
 
 # config Terminal
 open ./co3k-Pro.terminal
+sleep 1
 defaults write com.apple.Terminal "Default Window Settings" "co3k-Pro"
 defaults write com.apple.Terminal "Startup Window Settings" "co3k-Pro"
 
@@ -69,3 +72,9 @@ chpass -s /usr/local/bin/zsh
 mkdir -p ~/Library/LaunchAgents
 ln -sfv /usr/local/opt/httpd/homebrew.mxcl.httpd.plist ~/Library/LaunchAgents/homebrew.mxcl.httpd.plist
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.httpd.plist
+
+# ...
+defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+defaults write com.apple.BezelServices kDim -bool false
+defaults write com.apple.dashboard mcx-disabled -bool true
