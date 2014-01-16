@@ -9,7 +9,6 @@ install brew-cask
 # brew
 install ack
 install autoconf
-install autoconf213
 install automake
 install bison
 install boost
