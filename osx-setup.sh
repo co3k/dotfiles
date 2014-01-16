@@ -60,3 +60,12 @@ defaults write ~/Library/Application\ Support/Alfred\ 2/Alfred.alfredpreferences
 open ./co3k-Pro.terminal
 defaults write com.apple.Terminal "Default Window Settings" "co3k-Pro"
 defaults write com.apple.Terminal "Startup Window Settings" "co3k-Pro"
+
+# change to use Homebrew zsh
+sudo perl -i -ple 'print "/usr/local/bin/zsh" if eof' /etc/shells
+chpass -s /usr/local/bin/zsh
+
+# change to use Homebrew apache
+mkdir -p ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/httpd/homebrew.mxcl.httpd.plist ~/Library/LaunchAgents/homebrew.mxcl.httpd.plist
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.httpd.plist

@@ -39,7 +39,4 @@ alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"
 export EDITOR=vi
 alias bcat='bcat --host=bcat.localhost'
 
-export PATH="/Users/co3k/.phpenv/bin:$PATH"
-eval "$(phpenv init -)"
-eval "$(rbenv init -)"
-source ~/.phpenv/completions/phpenv.zsh
+export PATH=/usr/local/opt/httpd/sbin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH
