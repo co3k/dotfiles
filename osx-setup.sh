@@ -7,6 +7,8 @@ keyremap4macbook=/Applications/KeyRemap4MacBook.app/Contents/Applications/KeyRem
 #   - http://www.defaults-write.com/
 #   - https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 #   - https://gist.github.com/woowee/6414643/raw/f7e557b9bba8bf8d889b30a3b45079a2a7bbf171/osx.sh
+#   - https://github.com/netj/dotfiles/blob/master/Mac/Tweak.sh
+#   - https://github.com/robb/.dotfiles/blob/master/alfred/settings.install
 
 sudo -v
 
@@ -22,21 +24,27 @@ sudo nvram SystemAudioVolume=" "
 defaults write -g AppleEnableMenuBarTransparency -bool false
 
 # Trackpad config
-defaults write -g com.apple.swipescrolldirection 0  # disable "Scroll & Zoom" -> "Scroll direction: natural"
+# disable "Scroll & Zoom" -> "Scroll direction: natural"
+defaults write -g com.apple.swipescrolldirection 0
 
 # Dock config
-defaults write com.apple.dock showAppExposeGestureEnabled 1 # enable "Application Expose"
-defaults write com.apple.dock "wvous-tl-corner" 5 # enable Hot Corner to show screensaver ...
-defaults write com.apple.dock "wvous-tl-modifier" 1048576 # ... with command key
-defaults write com.apple.dock "persistent-apps" -array # remove all persistent applications from Dock
-defaults write com.apple.dock "autohide" 1
-defaults write com.apple.dock "magnification" 1
+# enable "Application Expose"
+defaults write com.apple.dock showAppExposeGestureEnabled -bool true
+# enable Hot Corner to show screensaver ...
+defaults write com.apple.dock "wvous-tl-corner" -int 5
+defaults write com.apple.dock "wvous-tl-modifier" -int 1048576
+# remove all persistent applications from Dock
+defaults write com.apple.dock "persistent-apps" -array
+defaults write com.apple.dock "autohide" -bool true
+defaults write com.apple.dock "magnification" -bool true
 defaults write com.apple.dock "orientation" "right"
 
 # Screen Saver config
-defaults write com.apple.screensaver askForPassword 1
+defaults write com.apple.screensaver askForPassword -bool true
+defaults write com.apple.screensaver askForPasswordDelay 0
 defaults write com.apple.screensaver idleTime 0
-defaults write com.apple.screensaver moduleDict -array '{ moduleName = iLifeSlideshows; path = "/System/Library/Frameworks/ScreenSaver.framework/Resources/iLifeSlideshows.saver"; type=0; }'
+defaults write com.apple.screensaver moduleDict '{ moduleName = iLifeSlideshows; path = "/System/Library/Frameworks/ScreenSaver.framework/Resources/iLifeSlideshows.saver"; type=0; }'
+defaults write -currentHost com.apple.screensaver moduleDict '{ moduleName = iLifeSlideshows; path = "/System/Library/Frameworks/ScreenSaver.framework/Resources/iLifeSlideshows.saver"; type=0; }'
 
 # Hot Keys config
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 '{ enabled = 0; value = { parameters = ( 32, 49, 1048576 ); type = standard; }; }'
@@ -55,7 +63,7 @@ $keyremap4macbook set remap.jis_unify_eisuu_to_kana 1
 
 # config Alfred v2
 defaults write com.runningwithcrayons.Alfred-Preferences 'appearance.theme' 'alfred.theme.pistachio'
-defaults write com.runningwithcrayons.Alfred-Preferences 'hotkey.default' -array '{ key = 49; mod = 1048576; string = Space; }'
+defaults write com.runningwithcrayons.Alfred-Preferences hotkey.default -dict key -int 49 mod -int 1048576 string Space
 defaults write ~/Library/Application\ Support/Alfred\ 2/Alfred.alfredpreferences/preferences/features/defaultresults/prefs showAll 1
 
 # config Terminal
@@ -73,8 +81,12 @@ mkdir -p ~/Library/LaunchAgents
 ln -sfv /usr/local/opt/httpd/homebrew.mxcl.httpd.plist ~/Library/LaunchAgents/homebrew.mxcl.httpd.plist
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.httpd.plist
 
-# ...
+# config Accessibility
+echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
+sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+
+# ...
 defaults write com.apple.BezelServices kDim -bool false
 defaults write com.apple.dashboard mcx-disabled -bool true

@@ -21,6 +21,7 @@ cask install alfred
 cask install freemind
 cask install vagrant
 cask install virtualbox
+cask alfred link
 
 # brew
 install ack
