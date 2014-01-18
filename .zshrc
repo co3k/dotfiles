@@ -13,7 +13,18 @@ compinit
 setopt correct
 
 bindkey -v
-PROMPT="%m:%1~ %n$ "
+
+autoload -U colors && colors
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats ' (%b)'
+zstyle ':vcs_info:*' actionformats ' (%b|%a)'
+precmd () {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+PROMPT="%{$fg[red]%}%m%{$reset_color%}:%{$fg[blue]%}%1~%{$reset_color%}%1(v|%F%1v%f|) %{$fg[white]%}%n%{$reset_color%}💰  "
+RPROMPT=""
 
 setopt auto_pushd
 function chpwd() { ls }
@@ -40,3 +51,5 @@ export EDITOR=vi
 alias bcat='bcat --host=bcat.localhost'
 
 export PATH=/usr/local/opt/httpd/sbin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

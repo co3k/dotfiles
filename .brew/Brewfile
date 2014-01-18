@@ -51,3 +51,4 @@ install wget
 install zsh
 install httpd
 install zsh-completions
+install zsh-syntax-highlighting
