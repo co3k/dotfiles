@@ -53,8 +53,8 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 '{ en
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 
 # Screen Capture config
-defaults write com.apple.screencapture type -string “png”
-defaults write com.apple.screencapture location -string “$HOME/Pictures/capture”
+defaults write com.apple.screencapture type -string "png"
+defaults write com.apple.screencapture location -string "$HOME/Pictures/capture"
 
 # config KeyRemap4MacBook
 $keyremap4macbook set remap.jis_eisuu2escape 1
