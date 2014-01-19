@@ -50,12 +50,15 @@ alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"
 export EDITOR=vi
 alias bcat='bcat --host=bcat.localhost'
 
-export PATH=/usr/local/opt/httpd/sbin:/usr/local/bin:/usr/local/sbin:/usr/sbin:$HOME/bin:$PATH
+export PATH="$HOME/.phpenv/bin:/usr/local/opt/httpd/sbin:/usr/local/bin:/usr/local/sbin:/usr/sbin:$HOME/bin:$PATH"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # virtualenvwrapper
 source /usr/local/bin/virtualenvwrapper.sh
+
+# phpenv
+eval "$(phpenv init -)"
 
 # rbenv
 eval "$(rbenv init -)"

@@ -13,6 +13,8 @@ brew bundle
 
 pip install virtualenv virtualenvwrapper
 
+git clone git://github.com/phpenv/phpenv.git ~/.phpenv
+
 ln -s $BASE_PATH/.vimrc ~/.vimrc
 ln -s $BASE_PATH/.vimperatorrc ~/.vimperatorrc
 ln -s $BASE_PATH/.zshrc ~/.zshrc
