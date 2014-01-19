@@ -57,6 +57,10 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # virtualenvwrapper
 source /usr/local/bin/virtualenvwrapper.sh
 
+# pyenv
+eval "$(pyenv init -)"
+export PYENV_ROOT=/usr/local/opt/pyenv
+
 # phpenv
 eval "$(phpenv init -)"
 

@@ -54,3 +54,4 @@ install zsh-completions
 install zsh-syntax-highlighting
 install rbenv
 install ruby-build
+install pyenv
