@@ -7,6 +7,7 @@ fi
 
 export BASE_PATH=`pwd`
 
+rm ~/.brew
 ln -s $BASE_PATH/.brew ~/.brew
 cd ~/.brew
 brew bundle
