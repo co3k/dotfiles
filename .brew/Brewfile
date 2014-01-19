@@ -55,3 +55,4 @@ install zsh-syntax-highlighting
 install rbenv
 install ruby-build
 install pyenv
+install pyenv-virtualenv
