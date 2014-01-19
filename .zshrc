@@ -54,5 +54,8 @@ export PATH=/usr/local/opt/httpd/sbin:/usr/local/bin:/usr/local/sbin:/usr/sbin:$
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh
+
 # rbenv
 eval "$(rbenv init -)"
