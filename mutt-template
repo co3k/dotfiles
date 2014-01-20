@@ -1,0 +1,21 @@
+# Please use with replacing the following variables:
+#  - $NAME     : your mail local-part
+#  - $DOMAIN   : your mail domain
+#  - $PASSWORD : your GMail password
+#  - $BOX      : name of this mailbox (personal or work)
+
+set from = "$NAME@$DOMAIN"
+set smtp_url = "smtp://$NAME@$DOMAIN@smtp.gmail.com:587/"
+set smtp_pass = "$PASSWORD"
+set imap_user = "$NAME@$DOMAIN"
+set imap_pass = "$PASSWORD"
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+
+set header_cache = "~/.mutt/cache/$BOX-headers"
+set message_cachedir = "~/.mutt/cache/$BOX-bodies"
+set certificate_file = "~/.mutt/$BOX-certificates"
+
+account-hook $folder "set imap_user=$NAME@$DOMAIN imap_pass=$PASSWORD"

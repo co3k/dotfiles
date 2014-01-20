@@ -60,18 +60,14 @@ Homebrew のみが目的であれば Command Line Tools for Xcode で充分だ�
 
     $ ./install.sh
 
+mutt でメールを閲覧するための設定をおこなう::
+
+    $ cp ~/dotfiles/mutt-template ~/.mutt/work
+    $ cp ~/dotfiles/mutt-template ~/.mutt/personal
+    $ vi ~/.mutt/work ~/.mutt/personal
+
 OSX やアプリケーション類の設定をおこなう::
 
     $ ./os-setup.sh
 
 コマンドが完了したあとは一度マシンの再起動をおこなう (設定変更に影響するアプリの再起動だけでいいんだけれども面倒なので)。
-
-4. Python 開発環境の構築
-========================
-
-(あとで)
-
-5. PHP 開発環境の構築
-=====================
-
-(あとで)

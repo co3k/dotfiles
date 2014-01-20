@@ -18,8 +18,12 @@ git clone git://github.com/phpenv/phpenv.git ~/.phpenv
 ln -s $BASE_PATH/.vimrc ~/.vimrc
 ln -s $BASE_PATH/.vimperatorrc ~/.vimperatorrc
 ln -s $BASE_PATH/.zshrc ~/.zshrc
+ln -s $BASE_PATH/.muttrc ~/.muttrc
 ln -s $BASE_PATH/_gitconfig ~/.gitconfig
 ln -s $BASE_PATH/_gitignore ~/.gitignore
+
+mkdir -p ~/.mutt
+curl https://raw.github.com/altercation/mutt-colors-solarized/master/mutt-colors-solarized-dark-16.muttrc > ~/.mutt/mutt-colors-solarized-dark-16.muttrc
 
 mkdir -p ~/.vim/after/ftplugin
 ln -s $BASE_PATH/.vim/after/ftplugin ~/.vim/after/ftplugin

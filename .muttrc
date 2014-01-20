@@ -1,0 +1,39 @@
+# header
+ignore *
+unignore from: subject to cc date x-mailer x-url user-agent
+hdr_order date from to cc subject
+
+# attachment
+mime_lookup application/octet-stream
+attachments   +A */.*
+attachments   -A text/x-vcard application/pgp.*
+attachments   -A application/x-pkcs7-.*
+attachments   +I text/plain
+attachments   -A message/external-body
+attachments   -I message/external-body
+
+# --
+
+set charset="utf-8"
+set send_charset="us-ascii:iso-2022-jp"
+set realname = "Kousuke Ebihara"
+
+set mail_check = 30
+set move = no
+set imap_keepalive = 900
+set sort = threads
+set sort_aux = 'reverse-last-date-received'
+set editor = "vim"
+set collapse_unread = yes
+
+source $HOME/.mutt/mutt-colors-solarized-dark-16.muttrc
+
+set index_format="%4C %Z %{%Y/%m/%d %H:%M} %-15.15L (%?l?%4l&%4c?) %s"
+
+source "~/.mutt/personal"
+folder-hook personal source ~/.mutt/personal
+source "~/.mutt/work"
+folder-hook work source ~/.mutt/work
+
+macro index,pager gop '<sync-mailbox><enter-command>source ~/.mutt/personal<enter><change-folder>!<enter>'
+macro index,pager gow '<sync-mailbox><enter-command>source ~/.mutt/work<enter><change-folder>!<enter>'
