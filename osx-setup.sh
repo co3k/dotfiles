@@ -25,7 +25,7 @@ defaults write -g AppleEnableMenuBarTransparency -bool false
 
 # Trackpad config
 # disable "Scroll & Zoom" -> "Scroll direction: natural"
-defaults write -g com.apple.swipescrolldirection 0
+defaults write -g com.apple.swipescrolldirection -bool false
 
 # Dock config
 # enable "Application Expose"
