@@ -54,3 +54,5 @@ install zsh-syntax-highlighting
 install rbenv
 install ruby-build
 install mutt
+install pyenv
+install pyenv-virtualenv
