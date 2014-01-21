@@ -24,7 +24,12 @@ OS のセットアップ完了後、ソフトウェアアップデートをお�
 
 Homebrew のみが目的であれば Command Line Tools for Xcode で充分だが、 Xcode の提供する開発環境全体が必要なので、 https://itunes.apple.com/us/app/xcode/id497799835 を App Store 経由でインストールする。
 
-2-2. Homebrew のインストール
+2-2. XQuartz のインストール
+---------------------------
+
+コマンド経由で入れるの辛そうなのでここで入れる。 http://xquartz.macosforge.org/landing/ から入手する。
+
+2-3. Homebrew のインストール
 ----------------------------
 
 以下のコマンドを実行してインストールする::
@@ -35,7 +40,7 @@ Homebrew のみが目的であれば Command Line Tools for Xcode で充分だ�
 
 ``brew doctor`` を実行して ``Your system is ready to brew`` が確認できたら次に進む。
 
-2-3. Homebrew 経由で Git をインストールする
+2-4. Homebrew 経由で Git をインストールする
 -------------------------------------------
 
 以下のコマンドを実行してインストールする::
