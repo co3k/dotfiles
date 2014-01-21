@@ -18,6 +18,7 @@ set charset="utf-8"
 set send_charset="us-ascii:iso-2022-jp"
 set realname = "Kousuke Ebihara"
 
+set edit_headers = yes
 set mail_check = 30
 set move = no
 set imap_keepalive = 900
