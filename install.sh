@@ -14,6 +14,8 @@ brew bundle
 
 pip install virtualenv virtualenvwrapper
 
+npm install -g grunt
+
 git clone git://github.com/phpenv/phpenv.git ~/.phpenv
 
 ln -s $BASE_PATH/.vimrc ~/.vimrc
