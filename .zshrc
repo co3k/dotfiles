@@ -67,4 +67,4 @@ export RBENV_ROOT=/usr/local/var/rbenv
 eval "$(rbenv init -)"
 
 # path
-export PATH="/usr/local/opt/pyenv/shims:$HOME/.phpenv/bin:/usr/local/opt/httpd/sbin:/usr/local/bin:/usr/local/sbin:/usr/sbin:$HOME/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:/usr/local/opt/pyenv/shims:$HOME/.phpenv/bin:/usr/local/opt/httpd/sbin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:$HOME/bin:$PATH"
