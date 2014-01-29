@@ -13,10 +13,10 @@ if [ `uname` = "Darwin" ]; then
     cd ~/.brew
     brew bundle
 
+    pip install virtualenv virtualenvwrapper
     npm install -g grunt
 fi
 
-pip install virtualenv virtualenvwrapper
 git clone git://github.com/phpenv/phpenv.git ~/.phpenv
 
 ln -s $BASE_PATH/.vimrc ~/.vimrc
