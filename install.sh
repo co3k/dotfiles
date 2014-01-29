@@ -7,14 +7,16 @@ fi
 
 export BASE_PATH=`pwd`
 
-rm ~/.brew
-ln -s $BASE_PATH/.brew ~/.brew
-cd ~/.brew
-brew bundle
+if [ `uname` = "Darwin" ]; then
+    rm ~/.brew
+    ln -s $BASE_PATH/.brew ~/.brew
+    cd ~/.brew
+    brew bundle
+
+    npm install -g grunt
+fi
 
 pip install virtualenv virtualenvwrapper
-
-npm install -g grunt
 
 git clone git://github.com/phpenv/phpenv.git ~/.phpenv
 
@@ -25,10 +27,12 @@ ln -s $BASE_PATH/.muttrc ~/.muttrc
 ln -s $BASE_PATH/_gitconfig ~/.gitconfig
 ln -s $BASE_PATH/_gitignore ~/.gitignore
 
-mkdir -p ~/Pictures
-rm ~/Pictures/kioku
-ln -s $BASE_PATH/pictures/kioku ~/Pictures/kioku
-ln -s $BASE_PATH/pictures/ebihara-150x150.jpg ~/Pictures/ebihara-150x150.jpg
+if [ `uname` = "Darwin" ]; then
+    mkdir -p ~/Pictures
+    rm ~/Pictures/kioku
+    ln -s $BASE_PATH/pictures/kioku ~/Pictures/kioku
+    ln -s $BASE_PATH/pictures/ebihara-150x150.jpg ~/Pictures/ebihara-150x150.jpg
+fi
 
 mkdir -p ~/.mutt
 curl https://raw.github.com/altercation/mutt-colors-solarized/master/mutt-colors-solarized-dark-16.muttrc > ~/.mutt/mutt-colors-solarized-dark-16.muttrc
