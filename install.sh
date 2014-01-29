@@ -17,7 +17,6 @@ if [ `uname` = "Darwin" ]; then
 fi
 
 pip install virtualenv virtualenvwrapper
-
 git clone git://github.com/phpenv/phpenv.git ~/.phpenv
 
 ln -s $BASE_PATH/.vimrc ~/.vimrc
@@ -43,4 +42,4 @@ ln -s $BASE_PATH/.vim/after/ftplugin ~/.vim/after/ftplugin
 mkdir -p ~/.vim/bundle
 cd ~/.vim/bundle
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-vi +BundleInstall +qall
+vim +BundleInstall +qall
