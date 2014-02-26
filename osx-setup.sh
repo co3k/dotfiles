@@ -13,13 +13,10 @@ keyremap4macbook=/Applications/KeyRemap4MacBook.app/Contents/Applications/KeyRem
 sudo -v
 
 # Set computer name
-if [$COMPUTER_NAME = ""] ; then
-    echo "Please pass new computer name as \$COMPUTER_NAME environment variable"
-    exit 1
+if [ $COMPUTER_NAME ] ; then
+    sudo scutil --set ComputerName $COMPUTER_NAME
+    sudo scutil --set LocalHostName $COMPUTER_NAME
 fi
-
-sudo scutil --set ComputerName $COMPUTER_NAME
-sudo scutil --set LocalHostName $COMPUTER_NAME
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
