@@ -58,3 +58,4 @@ install pyenv
 install pyenv-virtualenv
 install nodejs
 install npm
+install the_silver_searcher
