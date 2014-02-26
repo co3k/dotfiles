@@ -11,6 +11,8 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'alfredodeza/khuno.vim'
+Bundle 'hynek/vim-python-pep8-indent'
 "</Bundles>
 
 set ambiwidth=double
@@ -23,6 +25,9 @@ set mouse=
 
 syntax on
 colorscheme jellybeans
+if has("gui_running")
+    colorscheme default
+endif
 set number
 set colorcolumn=120
 
