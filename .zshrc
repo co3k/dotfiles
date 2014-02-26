@@ -53,19 +53,17 @@ alias bcat='bcat --host=bcat.localhost'
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
+# path
+export PATH="$HOME/.rbenv/shims:/usr/local/opt/pyenv/shims:$HOME/.phpenv/bin:/usr/local/opt/httpd/sbin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:$HOME/bin:$PATH"
 
 # pyenv
-export PYENV_ROOT=/usr/local/opt/pyenv
 eval "$(pyenv init -)"
 
 # phpenv
 eval "$(phpenv init -)"
 
 # rbenv
-export RBENV_ROOT=/usr/local/var/rbenv
 eval "$(rbenv init -)"
 
-# path
-export PATH="$HOME/.rbenv/shims:/usr/local/opt/pyenv/shims:$HOME/.phpenv/bin:/usr/local/opt/httpd/sbin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:$HOME/bin:$PATH"
+export DOCKER_HOST=tcp://
+ssh-add
