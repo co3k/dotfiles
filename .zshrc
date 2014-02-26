@@ -13,6 +13,7 @@ compinit
 setopt correct
 
 bindkey -v
+bindkey -M vicmd '?' history-incremental-search-backward
 
 autoload -U colors && colors
 autoload -Uz vcs_info
