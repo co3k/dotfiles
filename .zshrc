@@ -27,7 +27,7 @@ precmd () {
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-PROMPT="%{$fg[red]%}%m%{$reset_color%}:%{$fg[blue]%}%1~%{$reset_color%}%1(v|%F%1v%f|) %{$fg[white]%}%n%{$reset_color%}💰  "
+PROMPT="%{$fg[red]%}%m%{$reset_color%}:%{$fg[blue]%}%1~%{$reset_color%}%1(v|%F%1v%f|) %{$fg[white]%}%n%{$reset_color%}$(if [ $(date +"%k") -gt 19 ] ; then echo "🍺"; else echo "💰"; fi)  "
 RPROMPT=""
 
 setopt auto_pushd
