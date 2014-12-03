@@ -13,7 +13,10 @@ compinit
 setopt correct
 
 bindkey -v
+bindkey -M vicmd '/' history-incremental-search-forward
 bindkey -M vicmd '?' history-incremental-search-backward
+bindkey '^R' history-incremental-search-forward
+bindkey '^S' history-incremental-search-backward
 
 autoload -U colors && colors
 autoload -Uz vcs_info
@@ -46,24 +49,20 @@ setopt hist_reduce_blanks
 setopt share_history
 setopt EXTENDED_HISTORY
 
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vi='env LANG=ja_JP.UTF-8 ~/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vim='env LANG=ja_JP.UTF-8 ~/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 export EDITOR=vi
 alias bcat='bcat --host=bcat.localhost'
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # path
-export PATH="$HOME/.rbenv/shims:/usr/local/opt/pyenv/shims:$HOME/.phpenv/bin:/usr/local/opt/httpd/sbin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:$HOME/bin:$PATH"
+export PATH="/usr/local/opt/httpd/sbin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:$HOME/bin:$PATH"
 
-# pyenv
-eval "$(pyenv init -)"
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
 
-# phpenv
-eval "$(phpenv init -)"
-
-# rbenv
-eval "$(rbenv init -)"
-
-export DOCKER_HOST=tcp://
-ssh-add
+# added by travis gem
+[ -f /Users/k-ebihara/.travis/travis.sh ] && source /Users/k-ebihara/.travis/travis.sh
