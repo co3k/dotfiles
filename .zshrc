@@ -58,6 +58,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # path
 export PATH="/usr/local/opt/httpd/sbin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:$HOME/bin:$PATH"
+export GOPATH="$HOME/go"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -66,3 +67,10 @@ eval "$(anyenv init -)"
 
 # added by travis gem
 [ -f /Users/k-ebihara/.travis/travis.sh ] && source /Users/k-ebihara/.travis/travis.sh
+
+export iOSOpenDevPath=/opt/iOSOpenDev
+export iOSOpenDevDevice=
+export PATH=/opt/iOSOpenDev/bin:$PATH
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh

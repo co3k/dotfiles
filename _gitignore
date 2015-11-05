@@ -21,5 +21,9 @@ Icon
 
 .svn/
 .php-version
+.ruby-version
+.python-version
 
 nohup.out
+*.un~
+.venv

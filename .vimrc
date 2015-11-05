@@ -13,6 +13,10 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'alfredodeza/khuno.vim'
 Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'othree/yajs.vim'
+Bundle 'rust-lang/rust.vim'
 "</Bundles>
 
 set ambiwidth=double
@@ -28,8 +32,15 @@ colorscheme jellybeans
 if has("gui_running")
     colorscheme default
 endif
-set number
+
+if &diff
+    set nonumber
+else
+    set number
+endif
+
 set colorcolumn=120
+let g:khuno_max_line_length=120
 
 set list
 set listchars=tab:▸\ 
@@ -46,6 +57,7 @@ au BufRead,BufNewFile *.twig set syntax=htmldjango
 
 set noswapfile
 set nobackup
+set nowritebackup
 set autoread
 
 map H :bp<Enter>
