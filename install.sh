@@ -21,6 +21,8 @@ git clone git://github.com/phpenv/phpenv.git ~/.phpenv
 ln -s $BASE_PATH/.vimrc ~/.vimrc
 ln -s $BASE_PATH/.vimperatorrc ~/.vimperatorrc
 ln -s $BASE_PATH/.zshrc ~/.zshrc
+mkdir -p ~/.config/fish
+ln -s $BASE_PATH/config.fish ~/.config/fish/config.fish
 ln -s $BASE_PATH/.muttrc ~/.muttrc
 ln -s $BASE_PATH/_gitconfig ~/.gitconfig
 ln -s $BASE_PATH/_gitignore ~/.gitignore
