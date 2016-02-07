@@ -24,3 +24,32 @@ set fish_pager_color_completion normal
 set fish_pager_color_description 555\x1eyellow
 set fish_pager_color_prefix cyan
 set fish_pager_color_progress cyan
+
+alias ctags='ctags -R --regex-php="/^[ \t]*const[ \t]+([a-z0-9_]+)/\1/d/i" --exclude=cache'
+alias gg="git grep --break --heading"
+alias vi='env LANG=ja_JP.UTF-8 ~/Applications/MacVim.app/Contents/MacOS/Vim $argv'
+alias vim='env LANG=ja_JP.UTF-8 ~/Applications/MacVim.app/Contents/MacOS/Vim $argv'
+
+function tag
+    vi -c "tag $argv"
+end
+
+# path
+set -gx PATH "/usr/local/opt/httpd/sbin" "/usr/local/bin" "/usr/local/sbin" "/sbin" "/usr/sbin" "$HOME/bin" $PATH
+set -gx GOPATH "$HOME/go"
+
+### Added by the Heroku Toolbelt
+set -gx PATH /usr/local/heroku/bin $PATH
+set -gx PATH $HOME/.anyenv/bin $PATH
+
+eval "(anyenv init -)"
+
+# added by travis gem
+[ -f /Users/k-ebihara/.travis/travis.sh ]; and source /Users/k-ebihara/.travis/travis.sh
+
+set -gx iOSOpenDevPath /opt/iOSOpenDev
+set -gx iOSOpenDevDevice ""
+set -gx PATH /opt/iOSOpenDev/bin $PATH
+
+set -gx NVM_DIR ~/.nvm
+source (brew --prefix nvm)/nvm.sh
