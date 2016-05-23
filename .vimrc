@@ -8,7 +8,7 @@ call vundle#rc()
 
 "<Bundles>
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'alfredodeza/khuno.vim'
@@ -17,6 +17,7 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'othree/yajs.vim'
 Bundle 'rust-lang/rust.vim'
+Bundle 'mxw/vim-jsx'
 "</Bundles>
 
 set ambiwidth=double
@@ -80,7 +81,9 @@ set title
 
 imap <C-O> <C-X><C-O>
 
-set statusline=%<%f\ %m%R%H%W%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = "jellybeans"
+let g:airline_section_y = "%{&fileencoding} [%{&fileformat}] (U+%B)"
 
 set incsearch
 set ignorecase
