@@ -16,14 +16,19 @@ Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'othree/yajs.vim'
+Bundle 'othree/es.next.syntax.vim'
 Bundle 'rust-lang/rust.vim'
 Bundle 'mxw/vim-jsx'
+Bundle 'fatih/vim-go'
+Bundle 'vim-rspec' 
+Bundle 'scrooloose/syntastic'
+Bundle 'keith/swift.vim'
 "</Bundles>
 
 set ambiwidth=double
 set backspace=2
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set autoindent
 set expandtab
 set mouse=
@@ -84,6 +89,7 @@ imap <C-O> <C-X><C-O>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = "jellybeans"
 let g:airline_section_y = "%{&fileencoding} [%{&fileformat}] (U+%B)"
+let g:syntastic_swift_checkers = ['swiftlint']
 
 set incsearch
 set ignorecase
