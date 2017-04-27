@@ -14,6 +14,30 @@ OSX 環境構築手順
 
 OS のセットアップ完了後、ソフトウェアアップデートをおこなう。
 
+2. このリポジトリを clone する
+==============================
+
+以下のコマンドを実行してこのリポジトリのファイル群を落としてくる::
+
+    $ cd ~
+    $ git clone git@github.com:ebihara/dotfiles.git
+
+.gitconfig の基となるファイルを作成する::
+
+    $ cd dotfiles
+    $ cp _gitconfig.example _gitconfig
+    $ vi _gitconfig
+
+3. make
+=======
+
+以下を叩く::
+
+    $ cd dotfiles
+    $ make
+
+
+
 2. Homebrew 環境の構築
 ======================
 
@@ -54,12 +78,6 @@ Homebrew のみが目的であれば Command Line Tools for Xcode で充分だ�
 
     $ cd ~
     $ git clone git@github.com:ebihara/dotfiles.git
-
-.gitconfig の基となるファイルを作成する::
-
-    $ cd dotfiles
-    $ cp _gitconfig.example _gitconfig
-    $ vi _gitconfig
 
 ドットファイルやパッケージ類のインストールをおこなう::
 

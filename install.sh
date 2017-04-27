@@ -16,14 +16,11 @@ if [ `uname` = "Darwin" ]; then
     pip install virtualenv virtualenvwrapper
 fi
 
-git clone git://github.com/phpenv/phpenv.git ~/.phpenv
-
 ln -s $BASE_PATH/.vimrc ~/.vimrc
 ln -s $BASE_PATH/.vimperatorrc ~/.vimperatorrc
 ln -s $BASE_PATH/.zshrc ~/.zshrc
 mkdir -p ~/.config/fish
 ln -s $BASE_PATH/config.fish ~/.config/fish/config.fish
-ln -s $BASE_PATH/.muttrc ~/.muttrc
 ln -s $BASE_PATH/.ctags ~/.ctags
 ln -s $BASE_PATH/_gitconfig ~/.gitconfig
 ln -s $BASE_PATH/_gitignore ~/.gitignore
@@ -34,9 +31,6 @@ if [ `uname` = "Darwin" ]; then
     ln -s $BASE_PATH/pictures/kioku ~/Pictures/kioku
     ln -s $BASE_PATH/pictures/ebihara-150x150.jpg ~/Pictures/ebihara-150x150.jpg
 fi
-
-mkdir -p ~/.mutt
-curl https://raw.github.com/altercation/mutt-colors-solarized/master/mutt-colors-solarized-dark-16.muttrc > ~/.mutt/mutt-colors-solarized-dark-16.muttrc
 
 mkdir -p ~/.vim/after/ftplugin
 ln -s $BASE_PATH/.vim/after/ftplugin ~/.vim/after/ftplugin
