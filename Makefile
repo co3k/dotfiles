@@ -49,7 +49,10 @@ _gitconfig:
 ~/.gitconfig: _gitconfig
 	ln -s $(BASE_PATH)/_gitconfig ~/.gitconfig
 
+~/.gitignore:
+	ln -s $(BASE_PATH)/_gitignore ~/.gitignore
+
 ~/.%:
 	ln -s $(BASE_PATH)/$(shell basename $@) $@
 
-dot-files-install: ~/.gitconfig ~/.vimrc
+dot-files-install: ~/.gitconfig ~/.gitignore ~/.vimrc ~/.zshrc ~/.ctags
