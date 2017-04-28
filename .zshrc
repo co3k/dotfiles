@@ -49,8 +49,8 @@ setopt hist_reduce_blanks
 setopt share_history
 setopt EXTENDED_HISTORY
 
-alias vi='env LANG=ja_JP.UTF-8 ~/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 ~/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 export EDITOR=vi
 alias bcat='bcat --host=bcat.localhost'
 
