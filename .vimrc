@@ -9,6 +9,7 @@ call vundle#rc()
 "<Bundles>
 Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'tpope/vim-fugitive'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'alfredodeza/khuno.vim'
@@ -23,6 +24,7 @@ Bundle 'fatih/vim-go'
 Bundle 'vim-rspec' 
 Bundle 'scrooloose/syntastic'
 Bundle 'keith/swift.vim'
+Plugin 'posva/vim-vue'
 "</Bundles>
 
 set ambiwidth=double

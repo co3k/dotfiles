@@ -9,7 +9,7 @@ sudo_v:
 	sudo -v
 
 /usr/local/bin/brew:
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew-update: /usr/local/bin/brew
 	brew update
@@ -46,7 +46,7 @@ mas-install: brew-package-install
 	mas install 803453959 # Slack
 	mas install 539883307 # LINE
 	mas install 409183694 # Keynote
-	mas upgrade
+#	mas upgrade
 
 _gitconfig:
 	@echo "You should configure your _gitconfig before execute. See CLEAN_INSTALL.OSX.rst"
@@ -67,6 +67,7 @@ _gitconfig:
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 ~/.config/karabiner/karabiner.json:
+	mkdir -p ~/.config/karabiner/
 	ln -s $(BASE_PATH)/karabiner.json ~/.config/karabiner/karabiner.json
 
 ~/.%:
@@ -94,7 +95,7 @@ _gitconfig:
 	hdiutil detach /Volumes/Firefox
 	rm /tmp/firefox.dmg
 
-/Applications/Karabiner-Elements.app: sudo_v
+/Applications/Karabiner-Elements.app:
 	curl -L "https://pqrs.org/latest/karabiner-elements-latest.dmg" > /tmp/karabiner-elements.dmg
 	hdiutil attach /tmp/karabiner-elements.dmg
 	export KARABINER_PATH="$(shell ls /Volumes/Karabiner-Elements*/Karabiner-Elements*.pkg | head -n1)" && sudo installer -pkg $$KARABINER_PATH -target /
