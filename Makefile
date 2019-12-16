@@ -52,6 +52,9 @@ _gitconfig:
 	@echo "You should configure your _gitconfig before execute. See CLEAN_INSTALL.OSX.rst"
 	exit 1
 
+~/.config/nvim:
+	ln -s $(BASE_PATH)/.config/nvim ~/.config/nvim
+
 ~/.gitconfig: _gitconfig
 	ln -s $(BASE_PATH)/_gitconfig ~/.gitconfig
 
