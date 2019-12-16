@@ -1,7 +1,7 @@
 BASE_PATH=$(shell pwd)
 
 all: sudo_v brew-package-install mas-install app-install dot-files-install vim-bundle-install ~/Pictures/kioku ~/Pictures/ebihara-150x150.jpg config-defaults
-dot-files-install: ~/.gitconfig ~/.gitignore ~/.vimrc ~/.zshrc ~/.ctags ~/.config/karabiner/karabiner.json
+dot-files-install: ~/.gitconfig ~/.gitignore ~/.vimrc ~/.zshrc ~/.ctags ~/.config/karabiner/karabiner.json ~/.config/nvim
 app-install: /Applications/MacVim.app /Applications/Firefox.app /Applications/Karabiner-Elements.app
 config-defaults: disable-boot-sound disable-menubar-transparency scroll-direction-natural configure-dock configure-screen-saver configure-hot-keys configure-terminal configure-accessibility
 
@@ -16,11 +16,7 @@ brew-update: /usr/local/bin/brew
 
 brew-package-install: brew-update
 	-brew install awscli
-	-brew install carthage
-	-brew install casperjs
-	-brew install clang-format
 	-brew install ctags
-	-brew install glide
 	-brew install go
 	-brew install hub
 	-brew install jq
@@ -29,22 +25,17 @@ brew-package-install: brew-update
 	-brew install nkf
 	-brew install nmap
 	-brew install nvm
+	-brew install nvim
 	-brew install rbenv
 	-brew install rust
-	-brew install swiftlint
 	-brew install terminal-notifier
 	-brew install the_silver_searcher
-	-brew install wine
 	-brew install zsh-completions
 	-brew install zsh-syntax-highlighting
 
 mas-install: brew-package-install
 	mas install 497799835 # Xcode
-	mas install 715768417 # Microsoft Remote Desktop
-	mas install 711830901 # OmniGraffle
-	mas install 428834068 # 夜フクロウ
 	mas install 803453959 # Slack
-	mas install 539883307 # LINE
 	mas install 409183694 # Keynote
 #	mas upgrade
 
