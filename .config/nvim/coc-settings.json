@@ -2,9 +2,14 @@
   "languageserver": {
     "golang": {
       "command": "gopls",
-      "args": [],
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
+    },
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": ["markdown"]
     }
-  }
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["prisma"],
+  "cSpell.userWords": ["entc", "entgo", "openapi", "efm", "gopls", "langserver"]
 }

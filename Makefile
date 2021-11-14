@@ -1,7 +1,7 @@
 BASE_PATH=$(shell pwd)
 
 all: sudo_v brew-package-install mas-install app-install dot-files-install vim-bundle-install ~/Pictures/kioku ~/Pictures/ebihara-150x150.jpg config-defaults
-dot-files-install: ~/.gitconfig ~/.gitignore ~/.vimrc ~/.zshrc ~/.ctags ~/.config/karabiner/karabiner.json ~/.config/nvim
+dot-files-install: ~/.gitconfig ~/.gitignore ~/.vimrc ~/.zshrc ~/.ctags ~/.config/karabiner/karabiner.json ~/.local/share/nvim/site/autoload/plug.vim
 app-install: /Applications/MacVim.app /Applications/Firefox.app /Applications/Karabiner-Elements.app
 config-defaults: disable-boot-sound disable-menubar-transparency scroll-direction-natural configure-dock configure-screen-saver configure-hot-keys configure-terminal configure-accessibility
 
@@ -36,12 +36,15 @@ brew-package-install: brew-update
 mas-install: brew-package-install
 	mas install 497799835 # Xcode
 	mas install 803453959 # Slack
-	mas install 409183694 # Keynote
+#	mas install 409183694 # Keynote
 #	mas upgrade
 
 _gitconfig:
 	@echo "You should configure your _gitconfig before execute. See CLEAN_INSTALL.OSX.rst"
 	exit 1
+
+~/.local/share/nvim/site/autoload/plug.vim:
+	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ~/.config/nvim:
 	ln -s $(BASE_PATH)/.config/nvim ~/.config/nvim
@@ -82,12 +85,12 @@ _gitconfig:
 	rm /tmp/macvim-kaoriya.dmg
 
 /Applications/Firefox.app:
-	curl -L "$(shell curl 'https://www.mozilla.org/ja/firefox/channel/desktop/' | grep -o 'https://download.mozilla.org/?product=firefox-[0-9]*.[0-9]b.*-SSL&amp;os=osx&amp;lang=ja-JP-mac' | sed 's/\&amp;/\&/g' | head -n1)" > /tmp/firefox.dmg
-	hdiutil attach /tmp/firefox.dmg
-	rm -rf /Applications/Firefox.app
-	cp -r /Volumes/Firefox/Firefox.app /Applications/
-	hdiutil detach /Volumes/Firefox
-	rm /tmp/firefox.dmg
+#	curl -L "$(shell curl 'https://www.mozilla.org/ja/firefox/channel/desktop/' | grep -o 'https://download.mozilla.org/?product=firefox-[0-9]*.[0-9]b.*-SSL&amp;os=osx&amp;lang=ja-JP-mac' | sed 's/\&amp;/\&/g' | head -n1)" > /tmp/firefox.dmg
+#	hdiutil attach /tmp/firefox.dmg
+#	rm -rf /Applications/Firefox.app
+#	cp -r /Volumes/Firefox/Firefox.app /Applications/
+#	hdiutil detach /Volumes/Firefox
+#	rm /tmp/firefox.dmg
 
 /Applications/Karabiner-Elements.app:
 	curl -L "https://pqrs.org/latest/karabiner-elements-latest.dmg" > /tmp/karabiner-elements.dmg
@@ -153,5 +156,5 @@ configure-accessibility:
 	# config Accessibility
 	echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
 	sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
-	defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-	defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+#	defaults -currentHost write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+#	defaults -currentHost write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144

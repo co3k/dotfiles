@@ -1,7 +1,7 @@
 runtime! userautoload/init/*.vim
 runtime! userautoload/plugins/*.vim
 
-
+" PlugInstall
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
@@ -12,19 +12,26 @@ Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'gko/vim-coloresque'
 Plug 'luochen1990/rainbow'
 Plug 'lambdalisue/gina.vim'
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'cohama/agit.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jbmorgado/vim-pine-script'
 Plug 'easymotion/vim-easymotion'
-Plug 'vim-jp/vim-go-extra'
 Plug 'jbmorgado/vim-pine-script'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'posva/vim-vue'
+Plug 'jasdel/vim-smithy'
+Plug 'pantharshit00/vim-prisma'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'tpope/vim-commentary'
+Plug 'github/copilot.vim'
 call plug#end()
 
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+"autocmd FileType go autocmd BufWritePre <buffer> Fmt
 autocmd FileType go setlocal noexpandtab
 
-set guifont=SF\ Mono\ Square:h11
+"set guifont=SF\ Mono\ Square:h11
 
 set mouse=a
 let g:rainbow_active = 1
@@ -32,7 +39,7 @@ map <C-f> :NERDTreeToggle<CR>
 
 let g:prettier#autoformat = 0
 let g:prettier#quickfix_enabled = 0
-autocmd BufWritePre *.js,*.ts,*.vue,*.css,*.scss PrettierAsync
+autocmd BufWritePre *.js,*.ts,*.vue,*.css,*.scss,*.json,*.md PrettierAsync
 
 set number
 set ambiwidth=double
@@ -113,6 +120,8 @@ nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
+  au BufNewFile,BufRead *.ts setlocal filetype=typescript
+  au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
   " Setup formatexpr specified filetype(s).
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder
@@ -180,7 +189,7 @@ function! FilePath()
 endfunction
 
 set list
-set listchars+=tab:>\ ,trail:~,space:␣,eol:↩
+set listchars+=tab:>\ ,trail:~,eol:↩
 
 let mapleader = "\<Space>"
 
@@ -195,3 +204,13 @@ augroup vimrc-auto-mkdir  " {{{
     endif
   endfunction  " }}}
 augroup END  " }}}
+
+nnoremap <space>e :CocCommand explorer<CR>
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
+noremap <space>; :call mkdp#util#open_preview_page()<CR>
+
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+highlight SpecialKey ctermbg=NONE guibg=NONE
+highlight EndOfBuffer ctermbg=NONE guibg=NONE
