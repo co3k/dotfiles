@@ -11,5 +11,9 @@
     }
   },
   "coc.preferences.formatOnSaveFiletypes": ["prisma"],
-  "cSpell.userWords": ["entc", "entgo", "openapi", "efm", "gopls", "langserver"]
+  "cSpell.userWords": ["entc", "entgo", "openapi", "efm", "gopls", "langserver"],
+  "graphql.filetypes": [
+    "graphql"
+  ],
+  "svelte.enable-ts-plugin": true
 }

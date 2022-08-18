@@ -3,6 +3,7 @@ runtime! userautoload/plugins/*.vim
 
 " PlugInstall
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'jparise/vim-graphql'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nanotech/jellybeans.vim'
@@ -25,6 +26,7 @@ Plug 'pantharshit00/vim-prisma'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'tpope/vim-commentary'
 Plug 'github/copilot.vim'
+Plug 'leafOfTree/vim-svelte-plugin'
 call plug#end()
 
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
@@ -189,7 +191,7 @@ function! FilePath()
 endfunction
 
 set list
-set listchars+=tab:>\ ,trail:~,eol:↩
+set listchars+=tab:>\ ,trail:~
 
 let mapleader = "\<Space>"
 
